@@ -28,7 +28,7 @@
   "dependencies": {
     "image-color-picker": "^1.0.0",
     "rn-fetch-blob": "^0.10.13",
-    "react-native-webview": "^5.8.1"
+    "react-native-webview": "^9.4.0"
   },
   "jest": {
     "preset": "react-native",
