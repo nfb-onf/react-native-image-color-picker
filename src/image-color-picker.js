@@ -23,7 +23,8 @@ export default class ImageColorPicker extends Component {
   getImage = async imageUrl => {
     try {
 
-      let localImagePath = FastImage.getCachePath(imageUrl);
+      await FastImage.preload([{uri: imageUrl}]);
+      let localImagePath = await FastImage.getCachePath({uri: imageUrl});
 
       // if we are on Android, then use native for Android
       if (Platform.OS === 'android') {
