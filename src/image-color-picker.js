@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { Platform } from 'react-native'
 import { WebView } from 'react-native-webview';
+import FastImage from 'react-native-fast-image';
 import RNFetchBlob from 'rn-fetch-blob';
 import RNImageColorPicker from 'image-color-picker';
-import { ImageCacheManager } from 'react-native-cached-image';
 import { canvasHtml } from './canvas-html';
 
 async function getColor(imagePath) {
@@ -23,8 +23,7 @@ export default class ImageColorPicker extends Component {
   getImage = async imageUrl => {
     try {
 
-      let imageCacheManager = ImageCacheManager({});
-      let localImagePath = await imageCacheManager.downloadAndCacheUrl(imageUrl, {});
+      let localImagePath = FastImage.getCachePath(imageUrl);
 
       // if we are on Android, then use native for Android
       if (Platform.OS === 'android') {

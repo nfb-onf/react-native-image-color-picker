@@ -47,6 +47,9 @@
     "react-native": "^0.49.3",
     "react-test-renderer": "^16.0.0"
   },
+  "peerDependencies": {
+    "react-native-fast-image": "*"
+  },
   "lint-staged": {
     "src/**/*.js": [
       "prettier --single-quote --trailing-comma es5 --write",
